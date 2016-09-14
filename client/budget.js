@@ -4,7 +4,7 @@ function Budget(props){
   console.log(props)
   return (
     <div className = "Budget">
-      <div>{props.text}</div>
+      <h3>Budget: {props.text}</h3>
     </div>
   )
 }
