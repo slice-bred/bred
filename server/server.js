@@ -10,11 +10,14 @@ const LocalStrategy = require('passport-local').Strategy;
 const User = require('./models/user.js');
 const PassportUse = require('./passport.js')
 const path = require('path');
+const cookieParser = require('cookie-parser');
+const cookieController = require('./session/cookieController');
 
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(cors());
 app.use(bodyParser());
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, './client')));
 
 app.get('/', (req, res) =>{
@@ -30,7 +33,10 @@ app.post('/login',
 );
 
 // user api
-app.post('/signup', userCtrl.signup);
+app.post('/signup', 
+  userCtrl.signup,
+  cookieController.setCookie,
+  function(req,res){res.render('./../client/dashboard')});
 app.get('/api/user/:username', userCtrl.getUser);
 
 // expenses api

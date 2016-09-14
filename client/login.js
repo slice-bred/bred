@@ -4,6 +4,7 @@ import Nav from './nav'
 import { browserHistory } from 'react-router'
 import $ from 'jquery';
 
+
 export default class Login extends React.Component {
 
   onSubmit(evt) {
@@ -38,6 +39,7 @@ export default class Login extends React.Component {
                 console.log('data from login',data)
                 let stringifiedData = JSON.stringify(data)
                 localStorage.setItem("expenses", stringifiedData);
+          
               },
               error: function (jqXHR, textStatus, errorThrown)
               {

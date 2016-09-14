@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Nav from './nav';
 import {Router, Route, Link, browserHistory} from 'react-router';
 import $ from 'jquery';
+import reactCookie from 'react-cookie';
 
 export default class Signup extends React.Component {
 	constructor(props){
@@ -43,7 +44,7 @@ export default class Signup extends React.Component {
 				    data : signupData,
 				    success: function(data, textStatus, jqXHR)
 				    {
-							console.log('SIGNUP SUCCESS')
+							console.log('CHECK THAT COOKIE! SHIT');
 				      localStorage.setItem("user", stringData);
 							const path = `/profile`
 							browserHistory.push(path)

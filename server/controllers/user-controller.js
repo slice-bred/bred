@@ -4,7 +4,7 @@ const User = require('../models/user');
 const expenses = require('../models/expenses');
 
 
-function signup(req, res) {
+function signup(req, res, next) {
 	User.create({
 		email: req.body.email,
 		username: req.body.username,
@@ -12,7 +12,8 @@ function signup(req, res) {
 		income: req.body.income
 	}).then(function (user) {
 		console.log('user created');
-		res.status('200').json(user);
+		res.USERID = user.id;
+		next();
 	}).catch(function(err) {
 		console.log('error', err);
 	});
