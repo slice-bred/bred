@@ -43,6 +43,7 @@ export default class Expense extends React.Component {
     	<div>
     		<h1>Add Expense</h1>
     		<form onSubmit={this.submit}>
+					<input placeholder="Expense Name" />
     			<input placeholder="Enter amount" />
     			<select name="Category">
 						<option value="food">Food</option>
