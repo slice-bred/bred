@@ -48,11 +48,19 @@ export default class Expense extends React.Component {
 						<option value="food">Food</option>
 						<option value="bills">Bills</option>
 						<option value="entertainment">Entertainment</option>
-						<option value="other">Other</option>
+						<option value="entertainment">Transportation</option>
+						<option value="other">Other</option> 
+					</select>
+					<select name="Recurring">
+						<option value="true">Recurring</option>
+						<option value="false">One Time Expense</option>
 					</select>
 					<button type="submit" className="submit-button">Submit</button>
     		</form>
     	</div>
     )
   }
+
+
+	
 }
