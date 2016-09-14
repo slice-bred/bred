@@ -43,13 +43,14 @@ export default class Signup extends React.Component {
 				    data : signupData,
 				    success: function(data, textStatus, jqXHR)
 				    {
+							console.log('SIGNUP SUCCESS')
 				      localStorage.setItem("user", stringData);
 							const path = `/profile`
 							browserHistory.push(path)
 				    },
 				    error: function (jqXHR, textStatus, errorThrown)
 				    {
-							console.log('no bueno');
+							console.log('SIGNUP ERROR');
 				    }
 				});
 		}
