@@ -41,7 +41,7 @@ export default class Login extends React.Component {
               },
               error: function (jqXHR, textStatus, errorThrown)
               {
-                console.log('no bueno');
+                console.log('no bueno mofo');
               }
           }).then( function() {
 

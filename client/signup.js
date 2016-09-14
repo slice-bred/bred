@@ -34,7 +34,7 @@ export default class Signup extends React.Component {
 				signupData.username = username;
 				signupData.email = email;
 				signupData.password = password;
-				signupData.income = password;
+				signupData.income = income;
 				let stringData = JSON.stringify({username: username, email: email, income: income});
 
 				$.ajax({
@@ -50,7 +50,7 @@ export default class Signup extends React.Component {
 				    },
 				    error: function (jqXHR, textStatus, errorThrown)
 				    {
-							console.log('SIGNUP ERROR');
+							console.log('no bueno fomo');
 				    }
 				});
 		}
