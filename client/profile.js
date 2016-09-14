@@ -67,23 +67,15 @@ export default class Profile extends React.Component {
   }
 
   render() {
+    let user = JSON.parse(localStorage.getItem("user")).username;
+    let email = JSON.parse(localStorage.getItem("user")).email;
+    let income = JSON.parse(localStorage.getItem("user")).income;
     this.refreshData();
     return (
     	<div>
-    		<h1>Add Recurring Expenses</h1>
-    		<form onSubmit={this.submit}>
-    			<input className="amount" placeholder="Enter amount" />
-    			<select name="Category">
-            <option value="rent">Rent</option>
-						<option value="food">Food</option>
-						<option value="bills">Bills</option>
-						<option value="entertainment">Entertainment</option>
-						<option value="other">Other</option>
-					</select>
-					<button type="submit" className="submit-button">Submit</button>
-    		</form>
-        <div id="rec-expenses-list">
-        </div>
+    		<h1>Hello {user}!</h1>
+        <h2>Your email address: {email}</h2>
+        <h2>Your income: {income}!</h2>
     	</div>
     )
   }
