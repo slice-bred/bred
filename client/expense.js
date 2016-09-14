@@ -48,7 +48,7 @@ export default class Expense extends React.Component {
 						<option value="food">Food</option>
 						<option value="bills">Bills</option>
 						<option value="entertainment">Entertainment</option>
-						<option value="entertainment">Transportation</option>
+						<option value="transportation">Transportation</option>
 						<option value="other">Other</option> 
 					</select>
 					<select name="Recurring">
