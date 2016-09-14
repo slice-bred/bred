@@ -1,6 +1,6 @@
 var User = require('./user');
 const Sequelize = require('sequelize');
-const dbUrl = 'postgres://zqfgesav:s317KdarS_J7BqbMhGuuxtUxEJyRNcmN@elmer.db.elephantsql.com:5432/zqfgesav'
+const dbUrl = 'postgres://vpcdhjqn:3KxZSDy8OIqQiamCwDzyUZJ9zLiAJnTm@elmer.db.elephantsql.com:5432/vpcdhjqn'
 const sequelize = new Sequelize(dbUrl);
 
 const Expenses = sequelize.define('expenses', {
