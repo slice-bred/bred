@@ -5,6 +5,7 @@ import store, { history } from './store';
 import ReactDOM from 'react-dom';
 import DashBoard from './client/dashboard'
 import Login from './client/login'
+import Logout from './client/logout'
 import Signup from './client/signup'
 import Profile from './client/profile'
 import Nav from './client/nav';
@@ -21,6 +22,7 @@ ReactDOM.render((
         <IndexRoute component={Home}/>
         <Route path="/dashboard" component={DashBoard} />
         <Route path="/login" component={Login} />
+        <Route path="/logout" component={Logout} />
         <Route path="/signup" component={Signup} />
         <Route path="/profile" component={Profile} />
         <Route path="/expense" component={Expense} />
