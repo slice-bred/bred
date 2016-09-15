@@ -46,7 +46,7 @@ export default class Signup extends React.Component {
 				    {
 							console.log('CHECK THAT COOKIE! SHIT');
 				      localStorage.setItem("user", stringData);
-							const path = `/profile`
+							const path = `/dashboard`
 							browserHistory.push(path)
 				    },
 				    error: function (jqXHR, textStatus, errorThrown)
