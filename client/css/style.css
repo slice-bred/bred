@@ -221,10 +221,11 @@ video {
 }
 .logoutContainer{
   text-align: center;
-  height: 500px;
-  width: 500px;
-  margin: 150px auto;
+  height: 450px;
+  width: 450px;
+  margin: 100px auto;
   border: 1px solid black;
+  padding: 15px;
 }
 .buttonContainer{
   display: flex;
@@ -234,17 +235,46 @@ video {
 .LOGOUTBUTTON{
   height: 50px;
   width: 150px;
-  color: teal;
+  color: black;
+  font-family: helvetica;
   margin: 15px;
   cursor: pointer;
   background-color: #fafafa;
   border: 1px solid black;
+}
+.LOGOUTBUTTON1{
+  height: 50px;
+  width: 150px;
+  color: black;
+  font-family: helvetica;
+  margin: 15px;
+  cursor: pointer;
+  background-color: #fafafa;
+  border: 1px solid black;
+}
+.LOGOUTBUTTON:hover{
+  color: black !important;
+  background-color: lightcoral;
+}
+.LOGOUTBUTTON1:hover{
+  color: black !important;
+  font-size: 22px !important;
+  background-color: lightcoral;
 }
 .BIGSHIT{
   font-size: 22px;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 5px;
+}
+.BIGSHIT:hover{
+  letter-spacing: 10px;
+  height: 100%;
+  width:100%;
+}
+
+#yeah{
+  font-size: 6px;
 }
 
 .leaving{
@@ -255,6 +285,7 @@ video {
   background-color: transparent;
   font-size: 16px;
   text-align: center;
+  margin-top: 65px;
 }
 .breadyLady{
   height: 100%;

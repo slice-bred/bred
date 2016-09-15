@@ -24,19 +24,16 @@ app.get('/', (req, res) =>{
 	res.sendFile(path.join(__dirname, './../index.html'))
 });
 
-app.post('/login',
-  passport.authenticate('local'), function(req, res) {
-    // authentication was successful.
-    // `req.user` contains the authenticated user.
-    res.send('authentication successful');
-  }
-);
+app.post('/login', userCtrl.getUser, (req,res)=>{return;})
+  // passport.authenticate('local'), function(req, res) {
+  //   // authentication was successful.
+  //   // `req.user` contains the authenticated user.
+  //   res.send('authentication successful');
+  // }
+
 
 // user api
-app.post('/signup', 
-  userCtrl.signup,
-  cookieController.setCookie,
-  function(req,res){res.render('./../client/dashboard')});
+app.post('/signup', userCtrl.signup);
 app.get('/api/user/:username', userCtrl.getUser);
 
 // expenses api

@@ -14,6 +14,7 @@ export default class Logout extends React.Component {
     console.log('WE LEAVIN')
     localStorage.setItem('user','');
     localStorage.setItem('expenses','');
+    localStorage.setItem('userId','');
     const path = `/`;
     browserHistory.push(path);
 }
@@ -23,8 +24,9 @@ export default class Logout extends React.Component {
   }
   promptForm(){
     this.setState({needFORM:true});
+    console.log('prompt form firing');
   }
-
+  
   render() {
     let BREADME, leaveFORM;
     if (this.state.breadyWoman){
@@ -35,18 +37,18 @@ export default class Logout extends React.Component {
           <input className="leaving"type="text" placeholder="WHY YOU LEAVIN BRED..."/>
         </form>
     }
+
     return (
       <div>
         {BREADME}
         <div className="logoutContainer">
           <h1>YOU WANNA LEAVE BRED?</h1>
           <div className="buttonContainer">
-          <button onClick={this.promptForm.bind(this)} className="LOGOUTBUTTON">Yeah</button>
-          <div onClick={this.onBread.bind(this)}className="LOGOUTBUTTON"><a><span className="BIGSHIT">SHIT</span><br/>I LOVE BRED</a></div>
+          <button onClick={this.promptForm.bind(this)} id ='yeah' className="LOGOUTBUTTON1">...Yeah</button>
+          <div onClick={this.onBread.bind(this)}className="LOGOUTBUTTON"><a><span className="BIGSHIT">NAH</span><br/>I LOVE BRED</a></div>
           </div> 
-          {leaveFORM} 
+          {leaveFORM}
         </div>
-      
       </div>
     )
   }
