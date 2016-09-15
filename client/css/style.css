@@ -260,3 +260,6 @@ video {
   height: 100%;
   width: 100%;
 }
+.Budget svg{
+  width: 30% !important;
+}

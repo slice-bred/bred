@@ -1,5 +1,6 @@
 import React from 'react';
-import Budget from './budget'
+import Budget from './budget';
+import { VictoryPie } from 'victory';
 
 function BudgetContainer(props){
 	console.log(props);
