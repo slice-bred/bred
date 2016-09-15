@@ -13,9 +13,14 @@ export default class DashBoard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      budgets:[1,2,3]
+      budgets:[1,2,3],
+      counter: 0
     }
   }
+
+  handleNewBudget() {
+
+	}
 
   render() {
 
@@ -23,7 +28,7 @@ export default class DashBoard extends React.Component {
     return (
       <div>
         <h2>{user} Budgets</h2>
-        <button type="submit" className="submit-button budget">Create Budget</button>
+        <button type="submit" onClick={this.handleNewBudget.bind(this)}>Create Budget</button>
         <BudgetContainer budgets={this.state.budgets} />
       </div>
     )
