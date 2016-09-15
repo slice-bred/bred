@@ -4,16 +4,18 @@ import { VictoryBar } from 'victory';
 import { VictoryLine } from 'victory';
 
 function Budget(props){
-  console.log(props)
+  let hi = props.budgetData[0];
   return (
     <div className = "Budget">
-      <h3>Budget: {props.text}</h3>
+      <h3>Budget: {props.budgetName}</h3>
+
       <VictoryPie
         data={[
-         {x: "Transportation", y: 62},
-         {x: "Rent", y: 91},
-         {x: "Food", y: 55},
-         {x: "Utilities", y: 55},
+         {x: "Transportation", y: props.budgetData[0]},
+         {x: "Bills", y: props.budgetData[1]},
+         {x: "Food", y: props.budgetData[2]},
+         {x: "Entertainment", y: props.budgetData[3]},
+         {x: "Other", y: props.budgetData[4]}
          ]}
       />
       <VictoryBar
@@ -23,27 +25,12 @@ function Budget(props){
           labels: {fontSize: 20}
          }}
         data={[
-        {x: 1, y: 1, fill: "gold", label: "SO"},
-        {x: 2, y: 3, fill: "orange"},
-        {x: 3, y: 2, fill: "tomato", label: "WOW"},
-        {x: 4, y: 4, fill: "pink"},
-        {x: 5, y: 3, fill: "magenta", label: "SUCH"},
-        {x: 6, y: 5, fill: "purple"},
-        {x: 7, y: 6, fill: "blue", label: "LABEL"}
+        {x: 1, y: 1, fill: "gold", label: props.userId[0]},
+        {x: 2, y: 3, fill: "orange", label: props.userId[1]},
+        {x: 3, y: 6, fill: "orange", label: props.userId[1]}
         ]}
         />
-      <VictoryLine
-         data={[
-         {x: 0, y: 1},
-         {x: 1, y: 3},
-         {x: 2, y: 2},      
-         {x: 3, y: 4},
-         {x: 4, y: 3},
-         {x: 5, y: 5}
-       ]}
-      />
         </div>
-        
   )
 }
 

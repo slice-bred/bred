@@ -4,6 +4,7 @@ import { VictoryPie } from 'victory';
 
 function BudgetContainer(props){
 	console.log(props);
+	console.log(props.userId)
   return (
     <div className = "BudgetContainer">
 				{
@@ -11,7 +12,9 @@ function BudgetContainer(props){
 						return (
 							<Budget
 								key={i}
-								text={budget} 
+								budgetName={budget[i]}
+								budgetData={props.budgetData[i]}
+								userId={props.userId[i]} 
 							/>
 						);
 					})

@@ -13,8 +13,9 @@ export default class DashBoard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      budgets:[1,2,3],
-      counter: 0
+      userId: [['xXbadBoi420Xx','call me poop face', 'TOJASH']],
+      budgetParsed:[[110, 130, 60, 390, 130]],
+      budgetName: [["Household"]]
     }
   }
 
@@ -28,9 +29,9 @@ export default class DashBoard extends React.Component {
     let user = localStorage.getItem('user') + "'s";
     return (
       <div>
-        <h2>{user} Budgets</h2>
+        <h2>{user}'s Budgets</h2>
         <button type="submit" onClick={this.handleNewBudget.bind(this)}>Create Budget</button>
-        <BudgetContainer budgets={this.state.budgets} />
+        <BudgetContainer budgets={this.state.budgetName} budgetData={this.state.budgetParsed} userId={this.state.userId}/>
       </div>
     )
   }
