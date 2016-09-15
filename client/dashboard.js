@@ -19,7 +19,8 @@ export default class DashBoard extends React.Component {
 
   render() {
 
-    let user = JSON.parse(localStorage.getItem("user")).username;
+    //let user = JSON.parse(localStorage.getItem("user")).username;
+    let user = localStorage.getItem('user') + "'s";
     return (
       <div>
         <h2>{user} Budgets</h2>
