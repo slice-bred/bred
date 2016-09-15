@@ -219,3 +219,44 @@ video {
   position: fixed;
   top: 0;
 }
+.logoutContainer{
+  text-align: center;
+  height: 500px;
+  width: 500px;
+  margin: 150px auto;
+  border: 1px solid black;
+}
+.buttonContainer{
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+.LOGOUTBUTTON{
+  height: 50px;
+  width: 150px;
+  color: teal;
+  margin: 15px;
+  cursor: pointer;
+  background-color: #fafafa;
+  border: 1px solid black;
+}
+.BIGSHIT{
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.leaving{
+  width: 350px;
+  height: 50px;
+  border: 0px solid #000000;
+  border-bottom-width: 1px;
+  background-color: transparent;
+  font-size: 16px;
+  text-align: center;
+}
+.breadyLady{
+  height: 100%;
+  width: 100%;
+}
