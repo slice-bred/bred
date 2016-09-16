@@ -13,14 +13,20 @@ const Expenses = sequelize.define('expenses', {
   amount: {
    type: Sequelize.STRING
   },
-  date: {
+  dateofpurchase: {
    type: Sequelize.STRING
   },
   recurring: {
    type: Sequelize.BOOLEAN
  },
+ recurringtype: {
+   type: Sequelize.STRING
+ },
  username: {
    type: Sequelize.STRING
+ },
+ budgetid: {
+   type: Sequelize.INTEGER
  }
 });
 

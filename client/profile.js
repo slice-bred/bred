@@ -6,7 +6,7 @@ import $ from 'jquery';
 export default class Profile extends React.Component {
 
   refreshData() {
-    const username = JSON.parse(localStorage.getItem('user')).username;
+    const username = JSON.parse(localStorage.getItem('user'));
     $.ajax({
       type: 'GET',
       url: 'http://localhost:3000/api/user/' + username + '/expense'
@@ -67,10 +67,13 @@ export default class Profile extends React.Component {
   }
 
   render() {
-    let user = JSON.parse(localStorage.getItem("user")).username;
-    let email = JSON.parse(localStorage.getItem("user")).email;
-    let income = JSON.parse(localStorage.getItem("user")).income;
-    this.refreshData();
+    // let user = JSON.parse(localStorage.getItem("user")).username;
+    // let email = JSON.parse(localStorage.getItem("user")).email;
+    // let income = JSON.parse(localStorage.getItem("user")).income;
+    let user = localStorage.getItem('user')
+    let email = 'todd@todd.io';
+    let income = '2500';
+    // this.refreshData();
     return (
     	<div>
     		<h1>Hello {user}!</h1>
