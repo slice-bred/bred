@@ -28,9 +28,11 @@ export default class Login extends React.Component {
         success: function(data, textStatus, jqXHR)
         { console.log('inside front end login, object passed from server is: ', data);
           //upon successful login make get reqeust to get user data after login
-          localStorage.setItem('user',data.username);
-          localStorage.setItem('userId',data.id);
-          console.log('These are our users credentials',data.username,data.id);
+          
+          localStorage.setItem('user',data.userInfo.username);
+          localStorage.setItem('userId',data.userInfo.id);
+          localStorage.setItem('expenses',data.expenses.rows);
+          // console.log('These are our users credentials',data.username,data.id);
           //let username = JSON.parse(localStorage.getItem('user')).username;
         }
         }).then( function() {

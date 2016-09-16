@@ -24,7 +24,7 @@ app.get('/', (req, res) =>{
 	res.sendFile(path.join(__dirname, './../index.html'))
 });
 
-app.post('/login', userCtrl.getUser, (req,res)=>{return;})
+app.post('/login', userCtrl.getUser, userCtrl.getBIDS, (req,res)=>{return;})
   // passport.authenticate('local'), function(req, res) {
   //   // authentication was successful.
   //   // `req.user` contains the authenticated user.

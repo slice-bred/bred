@@ -1,8 +1,12 @@
 //user-controller.js
 'use strict'
 const User = require('../models/user');
+const sharedBudget = require('../models/sharedBudget')
 const expenses = require('../models/expenses');
+const pg = require('pg');
 
+var client = new pg.Client('postgres://vpcdhjqn:3KxZSDy8OIqQiamCwDzyUZJ9zLiAJnTm@elmer.db.elephantsql.com:5432/vpcdhjqn');
+client.connect();
 
 function signup(req, res) {
 	User.create({
@@ -20,17 +24,28 @@ function signup(req, res) {
 	});
 }
 
-function getUser(req, res) {
+function getUser(req, res, next) {
  	console.log('are we in getUser req.params.username', req.body);
 	 User.find({ where: {
     	username: req.body.username
   	}
   }).then(function(result) {
-		console.log("SUCCEDED IN GETTING SHIT FROM SQL. from userController in getUser",result);
-		return res.status('200').json(result);
+		res.userInfo = result;
+		next();
 	}).catch(function(err) {
 		console.log('error', err);
 	});
 }
 
-module.exports = { signup, getUser };
+function getBIDS(req, res){
+	var results;
+	var query1 = client.query('SELECT * FROM expenses WHERE budgetid = 0')
+	console.log('in the BIDS');
+	query1.on('end', function(resultz){
+					results = resultz;
+					client.end();
+					return res.send({userInfo:res.userInfo,expenses:results});})
+	console.log('in the bids',results);
+	
+}
+module.exports = { signup, getUser, getBIDS };
